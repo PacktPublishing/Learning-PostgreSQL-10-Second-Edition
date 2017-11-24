@@ -1,0 +1,21 @@
+version: '2.1'
+
+services:
+
+  master:
+    hostname: master
+    build:
+      context: .
+      dockerfile: Dockerfile-master
+    ports:
+      - "15432:5432"
+
+  standby:
+    hostname: standby
+    build:
+      context: .
+      dockerfile: Dockerfile-standby
+    ports:
+      - "25432:5432"
+    links:
+      - master:master

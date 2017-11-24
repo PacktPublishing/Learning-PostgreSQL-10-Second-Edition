@@ -1,0 +1,1 @@
+ SELECT * FROM information_schema.views where table_schema IN ('pg_catlog', 'information_schema');

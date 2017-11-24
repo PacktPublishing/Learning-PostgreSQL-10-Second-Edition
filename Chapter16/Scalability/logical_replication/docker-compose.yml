@@ -1,0 +1,19 @@
+version: '2.1'
+
+services:
+
+  publisher:
+    hostname: publisher
+    build:
+      context: .
+      dockerfile: Dockerfile-publisher
+    ports:
+      - "15432:5432"
+
+  subscriber:
+    hostname: subscriber
+    build:
+      context: .
+      dockerfile: Dockerfile-subscriber
+    ports:
+      - "25432:5432"

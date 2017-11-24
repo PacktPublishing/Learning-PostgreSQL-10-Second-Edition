@@ -1,0 +1,1 @@
+SELECT relname, case relkind when 'r' then 'table' WHEN 'v' THEN 'VIEW' END as type FROM pg_class WHERE relname like 'pg_sta%' AND relkind IN ('r','v') LIMIT 5 ;
